@@ -6,7 +6,7 @@ Armbian Kernel 6.0.9
 Tested on : https://forum.banana-pi.org/t/bananapi-bpi-m2-zero-new-image-release-armbian-bullseye/14448
 
 ## Connection diagram
-``
+```
 LCD pin - BPI-M2Z pin
     VCC - 2 (5v)
     GND - 6 (GND)
@@ -17,7 +17,7 @@ LCD pin - BPI-M2Z pin
      CS - 24 (SPI0_CS)(PC3)
     DIN - 19 (SPI0_MOSI)(PC0)
      DO - 21 (SPI0_MISO)(PC1)
-``
+```
 
 ## Add overlay
 
@@ -34,23 +34,23 @@ LCD pin - BPI-M2Z pin
 - Create file /etc/modules-load.d/98-fbtft.conf 
 `# nano /etc/modules-load.d/98-fbtft.conf`
 - Copy in it : 
-``fbtft
-fbtft_device``
+```fbtft
+fbtft_device```
 
 - Create file /usr/share/X11/xorg.conf.d/99-fbdev.conf
 - Copy in it :
-``Section "Device"  
+```Section "Device"  
 Identifier "piscreen"
 Driver "fbdev"
 Option "fbdev" "/dev/fb0"
-EndSection``
+EndSection```
 
 ## Change console font (optional)
 
 `# sudo dpkg-reconfigure console-setup`
 
 - Select options :
-``
+```
 Encoding to use on the console: <UTF-8>
 Character set to support: <Guess optimal character set>
 Font for the console: Terminus (default is VGA)
