@@ -6,7 +6,7 @@ Armbian Kernel 6.0.9
 Tested on : https://forum.banana-pi.org/t/bananapi-bpi-m2-zero-new-image-release-armbian-bullseye/14448
 
 ## Connection diagram
-
+``
 LCD pin - BPI-M2Z pin
     VCC - 2 (5v)
     GND - 6 (GND)
@@ -17,7 +17,7 @@ LCD pin - BPI-M2Z pin
      CS - 24 (SPI0_CS)(PC3)
     DIN - 19 (SPI0_MOSI)(PC0)
      DO - 21 (SPI0_MISO)(PC1)
-
+``
 
 ## Add overlay
 
