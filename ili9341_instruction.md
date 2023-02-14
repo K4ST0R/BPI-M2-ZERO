@@ -22,32 +22,44 @@ LCD pin - BPI-M2Z pin
 ## Add overlay
 
 - As root create /root/ili9341bpiz.dts file
-`# nano /root/ili9341bpiz.dts`
+```
+# nano /root/ili9341bpiz.dts
+```
 
 - Copy content of overlay/spi0_ili9341_overlay.txt
 
 - Buil and install with
-`# armbian-add-overlay ili9341bpiz.dts`
+```
+# armbian-add-overlay ili9341bpiz.dts
+```
 
 ## Set graphic
 
 - Create file /etc/modules-load.d/98-fbtft.conf 
-`# nano /etc/modules-load.d/98-fbtft.conf`
+```
+# nano /etc/modules-load.d/98-fbtft.conf
+```
 - Copy in it : 
-```fbtft
-fbtft_device```
+```
+fbtft
+fbtft_device
+```
 
 - Create file /usr/share/X11/xorg.conf.d/99-fbdev.conf
 - Copy in it :
-```Section "Device"  
+```
+Section "Device"  
 Identifier "piscreen"
 Driver "fbdev"
 Option "fbdev" "/dev/fb0"
-EndSection```
+EndSection
+```
 
 ## Change console font (optional)
 
-`# sudo dpkg-reconfigure console-setup`
+```
+# sudo dpkg-reconfigure console-setup
+```
 
 - Select options :
 ```
@@ -57,7 +69,7 @@ Font for the console: Terminus (default is VGA)
 Font size: 6x12 (framebuffer only)
 ```
 
-## REBOOT! :)
+## REBOOT!
 
 ## Thanks
 Special thanks to alleiny for his guide : 
