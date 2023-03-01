@@ -1,1 +1,0 @@
-# OTA firmware upload example
